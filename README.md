@@ -13,7 +13,7 @@ A sleek, responsive, and modern personal portfolio website built for Alula Muzey
 **Frontend:**
 - HTML5 (Semantic Structure)
 - CSS3 (Flexbox, CSS Grid, Custom Variables, Keyframe Animations)
-- Vanilla JavaScript (DOM manipulation, IntersectionObserver, Fetch API)
+- Pure JavaScript (DOM manipulation, IntersectionObserver, Fetch API)
 
 **Backend:**
 - Node.js
@@ -26,20 +26,20 @@ A sleek, responsive, and modern personal portfolio website built for Alula Muzey
 ### 1. Start the Backend Server
 The project uses a local Express server to handle contact form submissions.
 ```bash
-cd vanilla-portfolio/backend
+cd portfolio/backend
 npm install
 node index.js
 ```
 *Note: The server will run on `http://localhost:3000`.*
 
 ### 2. View the Frontend
-Open `vanilla-portfolio/index.html` in your browser. For the development experience, it is highly recommended to use the **Live Server** extension in VS Code.
+Open `portfolio/index.html` in your browser. For the development experience, it is highly recommended to use the **Live Server** extension in VS Code.
 
 ## 📬 Contact Form Configuration
 If you need to change your email or re-authenticate in the future:
 1. Ensure 2-Step Verification is on for your Google Account.
 2. Go to `https://myaccount.google.com/apppasswords` and generate a new **App Password**.
-3. Place the 16-character password into `vanilla-portfolio/backend/index.js` inside the `transporter` auth object.
+3. Place the 16-character password into `portfolio/backend/index.js` inside the `transporter` auth object.
 
 ---
 *Developed by Alula Muzey*
