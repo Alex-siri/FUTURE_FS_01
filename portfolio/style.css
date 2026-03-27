@@ -1,6 +1,7 @@
 /* Reset & Variables */
 :root {
   --primary: #d4af37;
+  --highlight-gradient: linear-gradient(90deg, #d4af37, #b8860b);
   --bg-color: #0f0f10;
   --text-main: #ffffff;
   --text-muted: #d1d1d6;
@@ -12,11 +13,13 @@
 }
 
 [data-theme="light"] {
+  --primary: #b8860b; /* Stronger gold */
+  --highlight-gradient: linear-gradient(90deg, #b8860b, #8b6508); /* Stronger gradient */
   --bg-color: #f7f7f9;
-  --text-main: #1a1a1c;
-  --text-muted: #5a5a5e;
+  --text-main: #000000; /* Pure black */
+  --text-muted: #2d2d30; /* Much darker gray/black */
   --card-bg: #ffffff;
-  --border: rgba(0, 0, 0, 0.1);
+  --border: rgba(0, 0, 0, 0.15); /* Slightly stronger border */
   --nav-bg: rgba(255, 255, 255, 0.85);
   --img-bg: #e5e5e5;
   --input-bg: #eaeaec;
@@ -56,7 +59,7 @@ ul {
 
 /* Utilities */
 .highlight {
-  background: linear-gradient(90deg, #d4af37, #b8860b);
+  background: var(--highlight-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

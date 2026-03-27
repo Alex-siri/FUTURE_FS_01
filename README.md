@@ -3,8 +3,9 @@
 A sleek, responsive, and modern personal portfolio website built for Alula Muzey, an aspiring full-stack developer.
 
 ## ✨ Features
-- **Modern Dark UI:** Deep dark gray background with premium gold accents.
-- **Fully Responsive:** Optimized for both desktop and mobile devices.
+- **Dark & Light Mode:** Seamlessly toggle between a premium dark UI (default) and a crisp, high-contrast light mode with user preference saved in local storage.
+- **Interactive Project Showcase:** Features auto-playing image slideshows and creative terminal-style layouts to display projects.
+- **Fully Responsive:** Optimized for desktop, tablet, and mobile devices.
 - **Smooth Animations:** Scroll-spy navigation, fade-in loading cascades, and interactive hover effects.
 - **Functional Contact Form:** Built-in Node.js backend to capture form submissions and email them directly to your inbox via Nodemailer.
 
@@ -21,7 +22,20 @@ A sleek, responsive, and modern personal portfolio website built for Alula Muzey
 - Nodemailer (Email delivery integration)
 - CORS (Cross-Origin Resource Sharing)
 
-## 🛠️ How to Run Locally
+## � Project Structure
+
+```text
+portfolio/
+├── assets/          # Images, project screenshots, and icons
+├── backend/         # Node.js + Express backend for form submission
+│   ├── index.js     # Server entry point & Nodemailer config
+│   └── package.json
+├── index.html       # Main portfolio structure
+├── style.css        # Extensive styling (CSS variables, Dark/Light modes)
+└── script.js        # Frontend logic (theme toggle, intersection observers, fetch)
+```
+
+## �🛠️ How to Run Locally
 
 ### 1. Start the Backend Server
 The project uses a local Express server to handle contact form submissions.
