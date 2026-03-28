@@ -7,7 +7,7 @@ A sleek, responsive, and modern personal portfolio website built for Alula Muzey
 | Light Home | Dark Home |
 |---|---|
 | ![Light Home](assets/screenshots/home-light.png) | ![Dark Home](assets/screenshots/home-dark.png) |
-| ![Contact Light](assets/screenshots/contact-light-new.png) | ![About & Skills Dark](assets/screenshots/about-skills-dark.png) |
+| ![Projects Light](assets/screenshots/projects-light-new.png) | ![About & Skills Dark](assets/screenshots/about-skills-dark.png) |
 
 ## ✨ Features
 - **Dark & Light Mode:** Seamlessly toggle between a high-contrast light UI and a crisp, premium dark mode with user preference saved in local storage.
@@ -32,14 +32,17 @@ A sleek, responsive, and modern personal portfolio website built for Alula Muzey
 ## 📁 Project Structure
 
 ```text
-portfolio/
-├── assets/          # Images, custom SVG backgrounds, and project screenshots
-├── backend/         # Node.js + Express backend for form submission
-│   ├── index.js     # Server entry point & Nodemailer config
-│   └── package.json
-├── index.html       # Main portfolio structure
-├── style.css        # Extensive styling (CSS variables, Dark/Light modes)
-└── script.js        # Frontend logic (theme toggle, intersection observers, fetch)
+FUTURE_FS_01/
+├── README.md
+├── index.html
+├── style.css
+├── script.js
+├── assets/
+│   ├── bg/             # Custom SVG backgrounds for feature/skill cards
+│   └── screenshots/    # README preview screenshots
+└── backend/
+	├── index.js
+	└── package.json
 ```
 
 ## 🛠️ How to Run Locally
