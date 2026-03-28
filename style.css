@@ -655,6 +655,10 @@ ul {
 
 .project-info {
   padding: 2rem;
+  background-color: var(--primary);
+  color: var(--btn-primary-text);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .project-info h3 {
@@ -663,7 +667,7 @@ ul {
 }
 
 .project-info p {
-  color: var(--text-muted);
+  color: rgba(0, 0, 0, 0.8);
   font-size: 0.9rem;
   margin-bottom: 1.5rem;
   line-height: 1.6;
@@ -690,15 +694,16 @@ ul {
 }
 
 .project-links a {
-  color: var(--text-muted);
+  color: rgba(0, 0, 0, 0.8);
   font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  font-weight: 600;
 }
 
 .project-links a:hover {
-  color: var(--primary);
+  color: #000;
 }
 
 /* Contact Section */
@@ -908,4 +913,10 @@ footer {
 [data-theme="light"] .project-img,
 .light-mode .project-img {
   background: transparent;
+}
+
+
+[data-theme="light"] .project-info,
+.light-mode .project-info {
+  background-color: var(--primary);
 }
