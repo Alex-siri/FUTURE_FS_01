@@ -4,13 +4,10 @@ A sleek, responsive, and modern personal portfolio website built for Alula Muzey
 
 ## 📸 Preview
 
-### Dark Mode
-![Hero Section Dark](assets/screenshots/hero-dark.png)
-![Skills & Features Dark](assets/screenshots/skills-dark.png)
-
-### Light Mode
-![Features Section Light](assets/screenshots/features-light.png)
-![Contact Section Light](assets/screenshots/contact-light.png)
+| Light Home | Dark Home |
+|---|---|
+| ![Light Home](assets/screenshots/home-light.png) | ![Dark Home](assets/screenshots/home-dark.png) |
+| ![Contact Light](assets/screenshots/contact-light-new.png) | ![About & Skills Dark](assets/screenshots/about-skills-dark.png) |
 
 ## ✨ Features
 - **Dark & Light Mode:** Seamlessly toggle between a high-contrast light UI and a crisp, premium dark mode with user preference saved in local storage.
