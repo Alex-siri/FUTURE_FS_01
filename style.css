@@ -14,10 +14,10 @@
   --shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   --btn-primary-text: #111111;
   --hover-shadow: rgba(212, 175, 55, 0.3);
-  --border-hover: var(--border-hover);
-  --badge-bg: var(--badge-bg);
-  --img-gradient-start: var(--img-gradient-start);
-  --img-gradient-end: var(--img-gradient-end);
+  --border-hover: var(--primary);
+  --badge-bg: rgba(212, 175, 55, 0.15);
+  --img-gradient-start: rgba(212, 175, 55, 0.3);
+  --img-gradient-end: rgba(212, 175, 55, 0.05);
 }
 
 [data-theme="light"], .light-mode {
@@ -443,7 +443,7 @@ ul {
 
 .feature-card:hover {
   transform: translateY(-5px);
-  border-color: var(--border-hover);
+  border-color: var(--primary);
 }
 
 .feature-card i {
@@ -516,7 +516,7 @@ ul {
 }
 
 .project-card:hover {
-  border-color: var(--border-hover);
+  border-color: var(--primary);
 }
 
 .project-img {
@@ -613,7 +613,6 @@ ul {
   animation-delay: 16s;
 }
 
-
 @keyframes fadeSlider {
   0% { opacity: 0; }
   5% { opacity: 1; } /* Fade in for 1s (1s / 20s = 5%) */
@@ -632,7 +631,6 @@ ul {
   display: flex;
   flex-direction: column;
 }
-
 
 .terminal-mockup .term-thumbs {
   display: grid;
@@ -655,8 +653,8 @@ ul {
 
 .project-info {
   padding: 2rem;
-  background-color: var(--primary);
-  color: var(--btn-primary-text);
+  background-color: rgba(209, 154, 0, 0.15);
+  color: var(--text-main);
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
@@ -667,7 +665,7 @@ ul {
 }
 
 .project-info p {
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--text-muted);
   font-size: 0.9rem;
   margin-bottom: 1.5rem;
   line-height: 1.6;
@@ -694,16 +692,15 @@ ul {
 }
 
 .project-links a {
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--text-muted);
   font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-weight: 600;
 }
 
 .project-links a:hover {
-  color: #000;
+  color: var(--primary);
 }
 
 /* Contact Section */
@@ -906,17 +903,58 @@ footer {
   }
 }
 
-[data-theme="light"] .project-card,
-.light-mode .project-card {
-  background-color: var(--input-bg);
-}
-[data-theme="light"] .project-img,
-.light-mode .project-img {
-  background: transparent;
-}
-
-
 [data-theme="light"] .project-info,
 .light-mode .project-info {
-  background-color: var(--primary);
+  background-color: rgba(209, 154, 0, 0.25);
+}
+
+/* Remove golden background specifically for the second project image */
+.projects-grid .project-card:nth-child(2) .project-img {
+  background-color: #0b0b0b;
+  background-image: none;
+}
+
+[data-theme="light"] .projects-grid .project-card:nth-child(2) .project-img,
+.light-mode .projects-grid .project-card:nth-child(2) .project-img {
+  background-color: #fbeaba;
+}
+
+
+
+
+/* --- Custom Card Pictures & Tints --- */
+/* About Features */
+.about-features .feature-card:nth-child(1) { /* Clean Code */
+  background: url('assets/bg/feature-1.svg') right bottom no-repeat, linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, transparent 100%), var(--card-bg);
+}
+.about-features .feature-card:nth-child(2) { /* Design Eye */
+  background: url('assets/bg/feature-2.svg') right bottom no-repeat, linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, transparent 100%), var(--card-bg);
+}
+.about-features .feature-card:nth-child(3) { /* Performance */
+  background: url('assets/bg/feature-3.svg') right bottom no-repeat, linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, transparent 100%), var(--card-bg);
+}
+
+/* Skills */
+.skills-grid .skill-card:nth-child(1) { /* HTML5 */
+  background: url('assets/bg/skill-1.svg') right bottom no-repeat, linear-gradient(135deg, rgba(227, 76, 38, 0.15) 0%, transparent 100%), var(--card-bg);
+}
+.skills-grid .skill-card:nth-child(2) { /* CSS & Tailwind */
+  background: url('assets/bg/skill-2.svg') right bottom no-repeat, linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, transparent 100%), var(--card-bg);
+}
+.skills-grid .skill-card:nth-child(3) { /* JavaScript */
+  background: url('assets/bg/skill-3.svg') center center no-repeat, linear-gradient(135deg, rgba(247, 223, 30, 0.15) 0%, transparent 100%), var(--card-bg);
+}
+.skills-grid .skill-card:nth-child(4) { /* React */
+  background: url('assets/bg/skill-4.svg') right bottom no-repeat, linear-gradient(135deg, rgba(97, 218, 251, 0.15) 0%, transparent 100%), var(--card-bg);
+}
+.skills-grid .skill-card:nth-child(5) { /* Python */
+  background: url('assets/bg/skill-5.svg') right bottom no-repeat, linear-gradient(135deg, rgba(55, 118, 171, 0.15) 0%, transparent 100%), var(--card-bg);
+}
+.skills-grid .skill-card:nth-child(6) { /* Databases & SQL */
+  background: url('assets/bg/skill-6.svg') right bottom no-repeat, linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, transparent 100%), var(--card-bg);
+}
+
+/* Fix hover background conflicts */
+.feature-card:hover, .skill-card:hover {
+  background-color: var(--border-color);
 }
