@@ -1,7 +1,7 @@
 /* Reset & Variables */
 :root {
-  --primary: #d4af37;
-  --secondary: #b8860b;
+  --primary: #d19a00;
+  --secondary: #b08000;
   --highlight-gradient: linear-gradient(90deg, var(--primary), var(--secondary));
   --bg-color: #0f0f10;
   --text-main: #ffffff;
@@ -21,18 +21,18 @@
 }
 
 [data-theme="light"], .light-mode {
-  --primary: #d4af37;
-  --secondary: #b8860b;
-  --secondary-accent: #b8860b;
+  --primary: #d19a00;
+  --secondary: #b08000;
+  --secondary-accent: #b08000;
   --highlight-gradient: linear-gradient(90deg, var(--primary), var(--secondary));
-  --bg-color: #f3f3f3;
+  --bg-color: #ffffff;
   --text-main: #000000;
   --text-muted: #2d2d30;
   --card-bg: #ffffff;
   --border: rgba(0, 0, 0, 0.15);
-  --nav-bg: rgba(243, 243, 243, 0.85);
-  --img-bg: #fdf8e8;
-  --input-bg: #fdf8e8;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --img-bg: transparent;
+  --input-bg: #fbeaba;
   --shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
   --btn-primary-text: #1a1a1a;
   --hover-shadow: rgba(212, 175, 55, 0.4);
@@ -904,4 +904,8 @@ footer {
 [data-theme="light"] .project-card,
 .light-mode .project-card {
   background-color: var(--input-bg);
+}
+[data-theme="light"] .project-img,
+.light-mode .project-img {
+  background: transparent;
 }
