@@ -115,16 +115,33 @@ ul {
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 800;
-  letter-spacing: -1px;
-  display: flex;
-  align-items: baseline;
+  letter-spacing: 2px;
+  display: inline-block;
+  color: var(--text-main);
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  opacity: 0;
+  animation: logoEntrance 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .logo span {
   color: var(--primary);
-  font-style: italic;
+}
+
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.9);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
 }
 
 .nav-links {
@@ -256,7 +273,22 @@ ul {
   color: var(--text-main);
   margin-bottom: 1.5rem;
   opacity: 0.9;
+  
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 1.5s steps(22, end) forwards;
+  /* Add an animation delay so it starts after other elements load */
+  animation-delay: 0.8s;
 }
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 22ch; } /* Fits "Full Stack Developer" */
+}
+
+/* blink-cursor removed */
 
 .description {
   color: var(--text-muted);
@@ -396,7 +428,7 @@ ul {
 }
 
 .section-container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -423,6 +455,37 @@ ul {
   text-justify: inter-word;
   text-align-last: left;
   hyphens: auto;
+}
+
+.about-stats {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  color: var(--text-main);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.stat-box:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.stat-box i {
+  color: var(--primary);
+  font-size: 1.2rem;
 }
 
 .about-features {
@@ -468,6 +531,23 @@ ul {
   line-height: 1.5;
 }
 
+/* Journey Section */
+.journey-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.journey-content p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  max-width: 900px;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
 /* Skills Section */
 .skills-grid {
   display: grid;
@@ -502,8 +582,8 @@ ul {
 
 /* Projects Section */
 .projects-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
@@ -512,8 +592,10 @@ ul {
   border: 1px solid var(--border);
   border-radius: 1rem;
   overflow: hidden;
-  transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s; /* Added background-color 0.3s */
+  transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
@@ -565,6 +647,18 @@ ul {
   }
 }
 
+.single-img {
+  position: absolute;
+  top: 10px;
+  left: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 20px);
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0.5rem;
+  background-color: var(--img-bg);
+}
+
 .slideshow img {
   position: absolute;
   top: 10px;
@@ -595,23 +689,23 @@ ul {
   animation-delay: 8s;
 }
 
-/* --- Slideshow for Project 2 (5 images) --- */
-.projects-grid .project-card:nth-child(2) .slideshow img {
+/* --- Slideshow for Project 3 (5 images) --- */
+.projects-grid .project-card:nth-child(3) .slideshow img {
   animation-duration: 20s; /* 5 images * 4s each */
 }
-.projects-grid .project-card:nth-child(2) .slideshow img:nth-child(1) {
+.projects-grid .project-card:nth-child(3) .slideshow img:nth-child(1) {
   animation-delay: 0s;
 }
-.projects-grid .project-card:nth-child(2) .slideshow img:nth-child(2) {
+.projects-grid .project-card:nth-child(3) .slideshow img:nth-child(2) {
   animation-delay: 4s;
 }
-.projects-grid .project-card:nth-child(2) .slideshow img:nth-child(3) {
+.projects-grid .project-card:nth-child(3) .slideshow img:nth-child(3) {
   animation-delay: 8s;
 }
-.projects-grid .project-card:nth-child(2) .slideshow img:nth-child(4) {
+.projects-grid .project-card:nth-child(3) .slideshow img:nth-child(4) {
   animation-delay: 12s;
 }
-.projects-grid .project-card:nth-child(2) .slideshow img:nth-child(5) {
+.projects-grid .project-card:nth-child(3) .slideshow img:nth-child(5) {
   animation-delay: 16s;
 }
 
@@ -659,6 +753,9 @@ ul {
   color: var(--text-main);
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-info h3 {
@@ -672,6 +769,9 @@ ul {
   margin-bottom: 1.5rem;
   line-height: 1.6;
   text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .tags {
@@ -691,6 +791,7 @@ ul {
 .project-links {
   display: flex;
   gap: 1rem;
+  margin-top: auto;
 }
 
 .project-links a {
@@ -894,7 +995,15 @@ footer {
   }
 
   .title { font-size: 3rem; }
-  .role-title { font-size: 1.2rem; }
+  .role-title { 
+    font-size: 1.2rem;
+    white-space: normal;
+    border-right: none;
+    width: auto;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+  }
   .section-title { font-size: 2.5rem; }
   .cta-buttons { flex-direction: column; }
   .about-features { grid-template-columns: 1fr; }
@@ -909,20 +1018,6 @@ footer {
 .light-mode .project-info {
   background-color: rgba(209, 154, 0, 0.25);
 }
-
-/* Remove golden background specifically for the second project image */
-.projects-grid .project-card:nth-child(2) .project-img {
-  background-color: #0b0b0b;
-  background-image: none;
-}
-
-[data-theme="light"] .projects-grid .project-card:nth-child(2) .project-img,
-.light-mode .projects-grid .project-card:nth-child(2) .project-img {
-  background-color: #fbeaba;
-}
-
-
-
 
 /* --- Custom Card Pictures & Tints --- */
 /* About Features */
