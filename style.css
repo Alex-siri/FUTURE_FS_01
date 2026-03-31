@@ -25,12 +25,12 @@
   --secondary: #b08000;
   --secondary-accent: #b08000;
   --highlight-gradient: linear-gradient(90deg, var(--primary), var(--secondary));
-  --bg-color: #ffffff;
-  --text-main: #000000;
-  --text-muted: #2d2d30;
-  --card-bg: #ffffff;
-  --border: rgba(0, 0, 0, 0.15);
-  --nav-bg: rgba(255, 255, 255, 0.85);
+  --bg-color: #1c1124; /* Deep regal purple / dark plum */
+  --text-main: #ffffff; /* Keep white for contrast */
+  --text-muted: #dcd8e0;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.1);
+  --nav-bg: rgba(28, 17, 36, 0.85); /* Matched to background */
   --img-bg: transparent;
   --input-bg: #fbeaba;
   --shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
@@ -198,6 +198,19 @@ ul {
   padding-top: 5rem;
   position: relative;
   overflow: hidden;
+}
+
+.hero-bg-logo {
+  position: absolute;
+  top: 16%;
+  left: 40%; /* Positioned above 'Muzey' and slightly to the right */
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 350px; /* Made slightly smaller as requested */
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0px 15px 25px rgba(0, 0, 0, 0.3)) contrast(1.1);
+  opacity: 1;
 }
 
 .home-container {
@@ -986,7 +999,7 @@ ul {
   background: var(--input-bg);
   border: none;
   border-radius: 0.5rem;
-  color: var(--text-main);
+  color: #000; /* Specifically changed to black */
   font-family: inherit;
   font-size: 0.9rem;
   transition: background-color 0.3s, color 0.3s;
