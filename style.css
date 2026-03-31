@@ -25,21 +25,21 @@
   --secondary: #b08000;
   --secondary-accent: #b08000;
   --highlight-gradient: linear-gradient(90deg, var(--primary), var(--secondary));
-  --bg-color: #1c1124; /* Deep regal purple / dark plum */
-  --text-main: #ffffff; /* Keep white for contrast */
-  --text-muted: #dcd8e0;
-  --card-bg: rgba(255, 255, 255, 0.05);
-  --border: rgba(255, 255, 255, 0.1);
-  --nav-bg: rgba(28, 17, 36, 0.85); /* Matched to background */
+  --bg-color: #f7f7f9; /* Off-white for light background */
+  --text-main: #111111; /* Dark text for contrast */
+  --text-muted: #555555;
+  --card-bg: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --nav-bg: rgba(247, 247, 249, 0.85); /* Matched to background */
   --img-bg: transparent;
-  --input-bg: #fbeaba;
-  --shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
-  --btn-primary-text: #1a1a1a;
+  --input-bg: #ffffff;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --btn-primary-text: #ffffff; /* White text for primary buttons */
   --hover-shadow: rgba(212, 175, 55, 0.4);
   --border-hover: rgba(212, 175, 55, 0.4);
   --badge-bg: rgba(212, 175, 55, 0.15);
-  --img-gradient-start: rgba(212, 175, 55, 0.3);
-  --img-gradient-end: rgba(212, 175, 55, 0.05);
+  --img-gradient-start: rgba(212, 175, 55, 0.1);
+  --img-gradient-end: rgba(212, 175, 55, 0.02);
 }
 
 * {
@@ -996,17 +996,17 @@ ul {
 .form-group input, .form-group textarea {
   width: 100%;
   padding: 1rem;
-  background: #d4ae6a; /* A balanced warm golden-brown medium tone */
-  border: none;
+  background: rgba(209, 154, 0, 0.15); /* Soft golden color matching project cards */
+  border: 1px solid var(--border);
   border-radius: 0.5rem;
-  color: #000 !important; /* Specifically changed to black */
+  color: var(--text-main);
   font-family: inherit;
   font-size: 0.9rem;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .form-group input::placeholder, .form-group textarea::placeholder {
-  color: #333333; /* Darker, almost black placeholder text */
+  color: var(--text-muted);
   opacity: 1;
 }
 
@@ -1014,8 +1014,8 @@ ul {
 .form-group input:-webkit-autofill:hover, 
 .form-group input:-webkit-autofill:focus, 
 .form-group input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px #d4ae6a inset !important;
-    -webkit-text-fill-color: #000 !important;
+    -webkit-box-shadow: 0 0 0 30px rgba(209, 154, 0, 0.15) inset !important;
+    -webkit-text-fill-color: var(--text-main) !important;
 }
 
 .form-group input:focus, .form-group textarea:focus {
