@@ -2,8 +2,8 @@
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = themeToggleBtn.querySelector('i');
 
-// Check for saved theme preference, default to 'dark'
-const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+// Check for saved theme preference, default to 'light'
+const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
 document.documentElement.setAttribute('data-theme', savedTheme);
 updateThemeIcon(savedTheme);
 
@@ -29,17 +29,27 @@ function updateThemeIcon(theme) {
 
 // Mobile Menu Toggle
 const hamburger = document.querySelector('.hamburger');
+const hamburgerIcon = hamburger.querySelector('i');
 const navLinks = document.querySelector('.nav-links');
 const links = document.querySelectorAll('.nav-links a');
 
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('show');
+  if (navLinks.classList.contains('show')) {
+    hamburgerIcon.classList.remove('fa-bars');
+    hamburgerIcon.classList.add('fa-times');
+  } else {
+    hamburgerIcon.classList.remove('fa-times');
+    hamburgerIcon.classList.add('fa-bars');
+  }
 });
 
 // Close menu when a link is clicked
 links.forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('show');
+    hamburgerIcon.classList.remove('fa-times');
+    hamburgerIcon.classList.add('fa-bars');
   });
 });
 

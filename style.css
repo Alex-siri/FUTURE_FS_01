@@ -1088,20 +1088,24 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background: var(--bg-color);
+    background: var(--nav-bg);
     flex-direction: column;
-    padding: 2rem 0;
+    padding: 0;
     text-align: center;
     border-bottom: 1px solid var(--border);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    backdrop-filter: blur(10px);
   }
 
   .nav-links.show {
-    display: flex;
+    max-height: 400px;
+    padding: 2rem 0;
   }
 
   .hamburger {
